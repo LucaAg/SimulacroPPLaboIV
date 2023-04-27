@@ -1,0 +1,8 @@
+<li *ngFor="let pelicula of peliculaRecibida">
+    Nombre: {{pelicula.nombre}} |
+    Genero: {{pelicula.tipo}} |
+    Fecha de estreno: {{pelicula.fechaEstreno.toString()}} |
+    Cantidad de público: {{pelicula.cantidadPublico}} |
+    Foto de la pelicula: <img [src]="pelicula.fotoPelicula" alt="Foto película">
+    <button class="btn btn-primary" (click)="obtenerDatosPelicula(pelicula)">Ver detalle</button>
+</li>

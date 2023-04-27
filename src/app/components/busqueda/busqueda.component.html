@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hello, world!</h1>
+      <button class="btn btn-primary" (click)="cambiarVista()">Cambiar vista</button><br><br>
+      <app-pelicula-listado *ngIf="vista=='listado'" [peliculaRecibida]="peliculas" (mostrarInfoPelicula)="mostrarInfoPelicula($event)"></app-pelicula-listado>
+      <app-tabla-pelicula *ngIf="vista=='tabla'" [peliculaRecibida]="peliculas" (mostrarInfoPelicula)="mostrarInfoPelicula($event)"></app-tabla-pelicula>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Detalle de la película</h2>
+        <app-detalle-pelicula [unaPelicula]="peliculaAMostrar"></app-detalle-pelicula>
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
