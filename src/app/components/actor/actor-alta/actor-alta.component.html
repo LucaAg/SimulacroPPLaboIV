@@ -1,1 +1,90 @@
-<p>actor-alta works!</p>
+<body class="bg-light">
+  <div class="container">
+<div class="py-5 text-center">
+  <img class="d-block mx-auto mb-4" src="../assets/imagenCine.png" alt="" width="84" height="84">
+  <h2>Alta actores</h2>
+  <p class="lead">Llene los datos del actor correspondiente.</p>
+</div>
+
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">Seleccione un país</span>
+      <span class="badge badge-secondary badge-pill">3</span>
+    </h4>
+    <app-tabla-paises (mostrarPaises)="obtenerPaisesAltaActor($event)"></app-tabla-paises>
+   
+
+  </div>
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Formulario del actor</h4>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nombre">Nombre</label>
+          <input [(ngModel)]="nuevoActor.nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" value="" required>
+          <div class="invalid-feedback">
+            El nombre es obligatorio.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="apellido">Apellido</label>
+          <input [(ngModel)]="nuevoActor.apellido" type="text" class="form-control" id="apellido" placeholder="Apellido" value="" required>
+          <div class="invalid-feedback">
+            El apellido es obligatorio.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="genero">Genero </label>
+        <div class="form-check">
+          <input [(ngModel)]="nuevoActor.genero" class="form-check-input" type="radio" name="genero" value="masculino" id="masculino">
+          <label class="form-check-label" for="masculino">
+            Masculino
+          </label>
+        </div>
+        <div class="form-check">
+          <input [(ngModel)]="nuevoActor.genero" class="form-check-input" type="radio" value="femenino" name="genero" id="femenino">
+          <label class="form-check-label" for="femenino">
+            Femenino
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="edad">Edad</label>
+        <input [(ngModel)]="nuevoActor.edad" type="number" class="form-control" id="edad" placeholder="Edad" required>
+        <div class="invalid-feedback">
+          La fecha de nacimiento es obligatoria.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="pais">Pais</label>
+        <input [(ngModel)]="nuevoActor.pais" type="text" class="form-control" id="pais" placeholder="País de origen" [value]="paisSeleccionado" readonly>
+        <div class="invalid-feedback">
+          Es obligatorio seleccionar un país.
+        </div>
+      </div>
+
+      <div class="foto" class="mb-3">
+        <label for="foto">Foto</label>
+        <input type="text" class="form-control" id="foto" required [(ngModel)]="nuevoActor.foto">
+        <div class="invalid-feedback">
+          Ingrese una foto válida.
+        </div>
+      </div>
+      <hr class="mb-4">    
+      <button (click)="guardar()" class="btn btn-primary btn-lg btn-block" type="submit">Dar alta actor</button>
+  </div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2023 LucaAg</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>
+</div>

@@ -11,6 +11,13 @@ import { ActorAltaComponent } from './components/actor/actor-alta/actor-alta.com
 import { ActorListadoComponent } from './components/actor/actor-listado/actor-listado.component';
 import { TablaPeliculaComponent } from './components/peliculas/tabla-pelicula/tabla-pelicula.component';
 import { DetallePeliculaComponent } from './components/peliculas/detalle-pelicula/detalle-pelicula.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetallesPaisComponent } from './components/paises/detalles-pais/detalles-pais.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { TablaPaisesComponent } from './components/paises/tabla-paises/tabla-paises.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +29,17 @@ import { DetallePeliculaComponent } from './components/peliculas/detalle-pelicul
     ActorAltaComponent,
     ActorListadoComponent,
     TablaPeliculaComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    DetallesPaisComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

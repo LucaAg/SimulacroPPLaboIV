@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
+      <h1 class="display-3">Listado de películas</h1>
       <button class="btn btn-primary" (click)="cambiarVista()">Cambiar vista</button><br><br>
       <app-pelicula-listado *ngIf="vista=='listado'" [peliculaRecibida]="peliculas" (mostrarInfoPelicula)="mostrarInfoPelicula($event)"></app-pelicula-listado>
       <app-tabla-pelicula *ngIf="vista=='tabla'" [peliculaRecibida]="peliculas" (mostrarInfoPelicula)="mostrarInfoPelicula($event)"></app-tabla-pelicula>

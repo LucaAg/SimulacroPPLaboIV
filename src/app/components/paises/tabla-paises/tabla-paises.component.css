@@ -1,0 +1,19 @@
+img{
+    width: 30px;
+}
+
+button
+{
+    border: none;
+    background-color: transparent;
+}
+
+.container
+{
+    display:inline-block;
+    
+}
+
+li{
+    cursor:pointer;
+}
